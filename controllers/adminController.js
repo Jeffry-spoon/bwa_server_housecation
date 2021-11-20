@@ -31,7 +31,6 @@ module.exports = {
   },
 
   actionSignin: async (req, res) => {
-
     try {
       const { username, password } = req.body;
       const user = await Users.findOne({ username: username });
@@ -68,12 +67,12 @@ module.exports = {
       const member = await Member.find();
       const booking = await Booking.find();
       const item = await Item.find();
-      res.render('admin/dashboard/view_dashboard', {
-        title: "Staycation | Dashboard",
+      res.render("admin/dashboard/view_dashboard", {
+        title: "Housecation | Dashboard",
         user: req.session.user,
         member,
         booking,
-        item
+        item,
       });
     } catch (error) {
       res.redirect("/admin/dashboard");
@@ -304,9 +303,7 @@ module.exports = {
   showEditItem: async (req, res) => {
     try {
       const { id } = req.params;
-      const item = await Item.findOne({ _id: id })
-      .populate({ path: "imageId", select: "id imageUrl" })
-      .populate({ path: "categoryId", select: "id name" });
+      const item = await Item.findOne({ _id: id }).populate({ path: "imageId", select: "id imageUrl" }).populate({ path: "categoryId", select: "id name" });
       const category = await Category.find();
       const alertMessage = req.flash("alertMessage");
       const alertStatus = req.flash("alertStatus");
@@ -318,7 +315,7 @@ module.exports = {
         category,
         action: "edit",
         user: req.session.user,
-      }); 
+      });
     } catch (error) {
       req.flash("alertMessage", `${error.message}`);
       req.flash("alertStatus", "danger");

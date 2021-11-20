@@ -8,6 +8,7 @@
     "test": "mocha --timeout 10000 --exit"
   },
   "dependencies": {
+    "auth": "0.0.9",
     "bcryptjs": "^2.4.3",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",

@@ -46,7 +46,7 @@ const uploadMultiple = multer({
   fileFilter: function (req, file, cb) {
     checkFileType(file, cb);
   },
-}).array("images");
+}).array("image");
 
 // // Check file Type
 function checkFileType(file, cb) {

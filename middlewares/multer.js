@@ -14,7 +14,7 @@ const uploadSingle = multer({
   fileFilter: function (req, file, cb) {
     checkFileType(file, cb);
   },
-}).single("image");
+}).single("images");
 
 const uploadMultiple = multer({
   storage: storage,
@@ -22,7 +22,7 @@ const uploadMultiple = multer({
   fileFilter: function (req, file, cb) {
     checkFileType(file, cb);
   },
-}).array("image");
+}).array("images");
 
 function checkFileType(file, cb) {
   const fileTypes = /jpeg|jpg|png|gif/;

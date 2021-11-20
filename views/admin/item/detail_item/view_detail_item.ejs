@@ -62,9 +62,10 @@
 </div>
 <%- include('show_modal_activity.ejs') %> <%- include('show_modal_feature.ejs') %> <%- include('../../../partials/js.ejs') %>
 <script>
-  $(document).ready(function () {
-    $("#dataTableActivity").DataTable();
+  $(document).ready(function () {  
     $("dataTable").DataTable();
+    $("#dataTableActivity").DataTable();
+
   });
   CKEDITOR.replace("about");
   $("#dataTableActivity").on("click", ".button-update", function () {

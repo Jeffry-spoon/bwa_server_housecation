@@ -509,7 +509,7 @@ module.exports = {
         name,
         type,
         itemId,
-        imageUrl: `public/images/${req.file.filename}`,
+        imageUrl: `images/${req.file.filename}`,
       });
 
       const item = await Item.findOne({ _id: itemId });

@@ -116,13 +116,13 @@ module.exports = {
       const category = await Category.findOne({ _id: id });
       category.name = name;
       await category.save();
-      req.flash("alertMessage", "Success Update Category");
-      req.flash("alertStatus", "success");
-      res.redirect("/admin/category");
+      req.flash('alertMessage', 'Success Update Category');
+      req.flash('alertStatus', 'success');
+      res.redirect('/admin/category');
     } catch (error) {
-      req.flash("alertMessage", `${error.message}`);
-      req.flash("alertStatus", "danger");
-      res.redirect("/admin/category");
+      req.flash('alertMessage', `${error.message}`);
+      req.flash('alertStatus', 'danger');
+      res.redirect('/admin/category');
     }
   },
 
